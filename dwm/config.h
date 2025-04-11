@@ -13,7 +13,8 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#ffffff";	/* highlight color inside */
-static const char col_cyan[]        = "#22d5b8";	/* highlight color outside  */
+static const char col_cyan[]        = "#8dbf7c";	/* highlight color outside  */
+// static const char col_cyan[]        = "#22d5b8";	/* highlight color outside  */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -27,7 +28,8 @@ static const char *mutevol[]    = { "/usr/bin/amixer", "set", "Master", "toggle"
 
 /* tagging */
 
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+// static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
