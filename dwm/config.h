@@ -70,11 +70,13 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *flamecmd[] = { "flameshot", "gui", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+    { MODKEY,                       XK_s,      spawn,          {.v = flamecmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -86,7 +88,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY, 	                XK_q,      killclient,     {0} },
+	{ MODKEY, 	                    XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -98,8 +100,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,			XK_minus,  zoom,	   {0} },
-	{ MODKEY,			XK_plus,   zoom,	   {0} },
+	{ MODKEY,			            XK_minus,  zoom,	   {0} },
+	{ MODKEY,			            XK_plus,   zoom,	   {0} },
 	/* { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } }, */
 	/* { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } }, */
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
@@ -113,9 +115,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-        { MODKEY|ControlMask,           XK_plus, spawn, {.v = upvol   } },
-        { MODKEY|ControlMask,           XK_minus, spawn, {.v = downvol } },
-        { MODKEY|ControlMask,           XK_m, spawn, {.v = mutevol } },
+    { MODKEY|ControlMask,           XK_plus, spawn, {.v = upvol   } },
+    { MODKEY|ControlMask,           XK_minus, spawn, {.v = downvol } },
+    { MODKEY|ControlMask,           XK_m, spawn, {.v = mutevol } },
 };
 
 /* button definitions */
