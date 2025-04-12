@@ -9,8 +9,10 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* fonts */
-static const char *fonts[]          = { "Noto Sans CJK JP:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "monospace:size=10",            /* eng slstatus eng */
+                                        "Noto Sans CJK JP:size=10" };   /* jp tags */
+
+static const char dmenufont[]       = "monospace:size=10";              /* eng dmenu */
 
 /* colors */
 static const char col_gray1[]       = "#222222";
