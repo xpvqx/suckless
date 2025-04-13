@@ -2,3 +2,5 @@
 nitrogen --restore &
 picom -b
 slstatus
+pipewire &
+pipewire-pulse &
